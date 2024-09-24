@@ -1,0 +1,61 @@
+<section class="playlist">
+  <div class="playlist__text">
+    <p>
+      Queremos hacer una lista de canciones que sea única y personalizada según
+      nuestros gustos. Anímate y añade la canción o
+      canciones que te gustaría escuchar en la boda.
+    </p>
+  </div>
+
+  <div class="playlist__iframe iframe-responsive">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?si=22ZbB6M7UziTDnQ5&list=PLn6psApLjE88WUhspeTS_TM489Uxgb4Xi"
+      width="500"
+      height="350"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+
+  <div class="playlist__help">
+    <ol class="list-decimal text-start">
+      <li>Pulsa el botón de "Añadir canción". *</li>
+      <li>Acepta que quieres colaborar con la lista de reproducción.</li>
+      <li>La lista reproducción pasará a pertenecer a tus listas.</li>
+      <li><strong>¡Ya puedes añadir las canciones que quieras!</strong></li>
+    </ol>
+
+    <small class="playlist__small"
+      >* Tienes que tener una cuenta Gmail y estar logueado en YouTube</small
+    >
+  </div>
+</section>
+
+<style>
+  .playlist__iframe {
+    margin: 20px 0;
+  }
+
+  .playlist__small {
+    display: block;
+    padding-top: 15px;
+  }
+  .iframe-responsive {
+    padding: 5px;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+
+  .iframe-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+</style>

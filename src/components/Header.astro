@@ -1,0 +1,51 @@
+<header class="header">
+  <img
+    class="header__image animate__animated animate__fadeIn animate__slower"
+    src="/assets/images/logo_fecha.png"
+    alt="Boda de Inés y Carlos"
+  />
+</header>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/assets/images/fondo.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .header__image {
+    max-width: 100%;
+    height: auto;
+
+    @media (min-width: 1000px) {
+      max-width: 40%;
+    }
+  }
+</style>
+
+<script>
+  import confetti from "canvas-confetti";
+
+  confetti({
+    particleCount: 120,
+    angle: 50,
+    spread: 70,
+
+    origin: { x: 0.1, y: 0.7 },
+
+  });
+
+  confetti({
+    particleCount: 120,
+    angle: 130,
+    spread: 70,
+    gravity: 0.5,
+    origin: { x: 0.9, y: 0.7 },
+
+  });
+
+</script>

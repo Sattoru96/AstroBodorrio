@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'gilda_displayregular';
+    src: url('/fonts/gildadisplay-regular-webfont.woff2') format('woff2'), url('/fonts/gildadisplay-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'barlowregular';
+    src: url('/fonts/barlow-regular-webfont.woff2') format('woff2'), url('/fonts/barlow-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'start_midnight';
+    src: url('/fonts/the_star_in_the_midnight-webfont.woff2') format('woff2'), url('/fonts/the_star_in_the_midnight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// For title
+@mixin mx-font-gilda {
+    font-family: 'gilda_displayregular';
+}
+
+// For  title
+@mixin mx-font-start-midnight {
+    font-family: 'start_midnight';
+}
+
+// For normal text
+@mixin mx-font-barlow {
+    // font-family: 'barlowregular';
+    font-family: 'barlowregular';
+
+}

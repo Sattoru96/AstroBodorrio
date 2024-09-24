@@ -1,0 +1,52 @@
+---
+interface Props {
+  tips: string;
+  description: string;
+  link: string;
+}
+const { tips, description, link = '' } = Astro.props;
+---
+
+<div class="mb-2 flex justify-start items-center w-full">
+  <div
+    class="z-20 flex items-center order-1 me-3 shadow-xl w-8 h-8 p-1 rounded-full list-icon__icon animate__animated animate__bounceInLeft"
+  >
+    <slot />
+  </div>
+  <div
+    class="order-1 rounded-lg shadow-xl w-5/12 p-2 animate__animated animate__backInRight list-icon__list"
+  >
+    <a href={link} target="_blank">
+      <p class="list-icon__text">
+        <strong>{tips}</strong>
+        {description}
+      </p>
+    </a>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../styles/variables/_color.scss";
+
+  .list-icon__icon {
+    background-color: $color-bg-beige;
+    border: 2px solid $color-gold;
+  }
+
+  .list-icon__text {
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  .list-icon__list {
+    background-color: $color-bg-beige;
+    border: 2px solid $color-gold;
+    width: 100% !important;
+    transition: 0.5s ease;
+    // cursor: pointer;
+
+    &:hover {
+      border-color: $color-dark-green;
+    }
+  }
+</style>

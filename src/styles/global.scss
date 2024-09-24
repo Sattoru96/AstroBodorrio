@@ -1,0 +1,97 @@
+@import "./variables/_color.scss";
+@import "./mixins/_fonts.scss";
+@import "scrollbar.scss";
+@import "animations.scss";
+
+* {
+    @include mx-font-barlow;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $color-bg-beige;
+
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.space-section {
+    background-color: $color-light-yellow;
+    height: 1px;
+    padding: 2px 0;
+}
+
+.font-start-midnight {
+    @include mx-font-start-midnight;
+}
+
+.circle-icon {
+    width: 200px;
+    height: 200px;
+    background-color: $color-light-beige;
+    border-radius: 50%;
+    border: 1px solid $color-gold;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-gold;
+    padding: 30px;
+    box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 30%);
+
+    @media (max-width: 540px) {
+        width: 150px;
+        height: 150px;
+        padding: 20px;
+    }
+}
+
+.icon-container {
+    width: 100%;
+}
+
+.wrapper-background {
+    background-image: url("/assets/images/fondo.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.button-link {
+    display: inline-block;
+    width: 200px;
+    padding: 10px 20px;
+    color: white;
+    background-color: $color-dark-green;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 15px;
+
+}
+
+.button-link:hover {
+    background-color: $color-bg-beige;
+    color: $color-dark-green;
+    border: 1px solid $color-gold;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.title-block {
+    font-weight: bold;
+    font-size: 2rem;
+    color: $color-dark-green;
+    text-align: center;
+}

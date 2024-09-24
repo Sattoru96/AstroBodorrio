@@ -1,0 +1,22 @@
+---
+interface Props {
+  autor: string;
+}
+
+const { autor } = Astro.props;
+---
+
+<div class="footer">
+  <p class="">{autor}</p>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables/_color.scss";
+  .footer {
+    display: grid;
+    place-items: center;
+    height: 50px;
+    color: $color-dark-green;
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Icon from "./parts/Icon.astro";
+---
+
+<div class="wrapper-background">
+  <section class="container instagram grid grid-cols-1">
+    <div class="flex justify-center items-center flex-col">
+      <div class="circle-icon">
+        <!-- <Icon
+          name="mdi:instagram"
+          class="icon-instagram invisible animate__animated animate__slow"
+        /> -->
+        <span
+          class="icon-container icon-instagram invisible animate__animated animate__slow"
+        >
+          <Icon icon="instagram" />
+        </span>
+      </div>
+
+      <div class="instagram__info">
+        <h2 class="title-block">Compartimos este día junto a ti</h2>
+        <p>¡Sube tus fotos y vídeos!</p>
+        <a
+          href="https://www.instagram.com/ines_carlos_2024"
+          target="_blank"
+          class="button-link">ver en Instagram</a
+        >
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  import { observerAnimation } from "../scripts/observerAnimation";
+  observerAnimation(".icon-instagram", "animate__flipInY");
+</script>
+
+<style lang="scss">
+  @import "../styles/variables/_color.scss";
+
+  .instagram {
+    padding: 50px 0;
+  }
+  .instagram__info {
+    padding: 15px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 18px;
+    max-width: 90%;
+    h3 {
+      color: $color-dark-green;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+</style>

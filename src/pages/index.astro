@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Party from "../components/Party.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CoverPhrase from "../components/CoverPhrase.astro";
+import CelebrationDetails from "../components/CelebrationDetails.astro";
+
+import HelpUs from "../components/HelpUs.astro";
+import Instagram from "../components/Instagram.astro";
+---
+
+<Layout title="Boda de Carlos e Inés">
+  <main class="container-lg h-screen">
+    <Header />
+    <div class="space-section"></div>
+    <CoverPhrase />
+    <div class="space-section"></div>
+    <CelebrationDetails />
+    <div class="space-section"></div>
+    <Party />
+    <div class="space-section"></div>
+    <Instagram />
+    <div class="space-section"></div>
+    <HelpUs />
+    <div class="space-section"></div>
+    <Footer autor="Inés y Carlos - 15 junio 2024" />
+
+    <!--
+    <div class="space-section"></div>
+    <HelpUs />
+    <div class="space-section"></div>
+    <Footer autor="Carlos Rayón Álvarez" /> -->
+  </main>
+</Layout>

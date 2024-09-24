@@ -1,0 +1,133 @@
+---
+import Icon from "./parts/Icon.astro";
+import Modal from "./parts/Modal.astro";
+import MapIframe from "./parts/MapIframe.astro";
+import EventTimes from "./parts/EventTimes.astro";
+---
+
+<div class="wrapper-background">
+  <section class="container celebration grid grid-cols-1">
+    <div class="flex justify-center items-center flex-col">
+      <div class="circle-icon">
+        <span
+          class="icon-container icon-ring invisible animate__animated animate__slow"
+        >
+          <Icon icon="ring" />
+        </span>
+      </div>
+
+      <h2 class="celebration__title font-start-midnight">Boda y Celebración</h2>
+
+      <div class="celebration__info">
+        <h2 class="title-block">Día</h2>
+        <p>Sábado 15 de Junio - 13h</p>
+        <button id="openModalAssistence" class="button-link"
+          >Confirmar Asistencia</button
+        >
+
+        <div class="celebration__info">
+          <h2 class="title-block">Lugar</h2>
+          <p>Restaurante Los Molinos de Ruente</p>
+          <button id="openModalMap" class="button-link">Cómo llegar</button>
+        </div>
+
+        <div class="celebration__info">
+          <h2 class="title-block">Autobús</h2>
+          <p>Horario autobús para invitados</p>
+          <button id="openModalBusschedules" class="button-link"
+            >Ver horarios</button
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <Modal
+    id="modalAssitence"
+    open="openModalAssistence"
+    close="closeModalAssintece"
+    title="Confirmar Asistencia"
+  >
+    <div class="flex justify-center items-center flex-col" slot="body">
+      <img src="/assets/images/logo_fecha.png" alt="" style="width: 230px" />
+      <p class="text-center">
+        ¡Ayúdanos a que la boda salga lo mejor posible!
+      </p>
+      <p class="text-center">
+        Por favor, rellena el siguiente formulario para confirmar tu asistencia.
+      </p>
+    </div>
+    <a href="https://forms.gle/cTzBCYuQgdwtNC3t7" target="_blank" class="button-link" slot="footer">Completar formulario</a>
+  </Modal>
+
+  <Modal
+    id="modalMap"
+    open="openModalMap"
+    close="closeModalMap"
+    title="¿Cómo llegar a la ceremonia?"
+  >
+    <MapIframe slot="body" />
+    <a
+      href="https://www.google.com/maps/place/Los+Molinos+de+Ruente,+Barrio+monasterio,+Ruente,+Cantabria,+39513+Ruente,+Cantabria/@43.26067,-4.264895,17z/data=!4m6!3m5!1s0xd490f9abb75d487:0xdb9c06f0841bc448!8m2!3d43.26067!4d-4.264895!16s%2Fg%2F11cn9v1_8p"
+      target="blank"
+      class="button-link"
+      slot="footer">Ampliar Mapa</a
+    >
+  </Modal>
+
+  <Modal
+    id="modalBusSchedules"
+    open="openModalBusschedules"
+    close="closeModalBusschedules"
+    title="Horarios de autobús"
+  >
+    <div class="flex justify-center items-center flex-col" slot="body">
+      <p class="mb-6">Haz click para ver el lugar exacto en el mapa </p>
+      <EventTimes />
+    </div>
+  </Modal>
+
+  <script>
+    import { observerAnimation } from "../scripts/observerAnimation";
+    observerAnimation(".icon-ring", "animate__fadeInUp");
+  </script>
+
+  <style lang="scss">
+    @import "../styles/variables/_color.scss";
+
+    .celebration {
+      padding: 50px 0;
+    }
+
+    .celebration__title {
+      text-align: center;
+      background-color: var(--color-gold);
+      border-radius: 5px 20px 5px;
+      min-width: 50%;
+      color: white;
+      font-size: 4rem;
+      letter-spacing: 5px;
+      padding: 0 10px;
+      margin: 0 10px;
+      @media (max-width: 540px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .celebration__info {
+      padding: 15px 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      gap: 18px;
+      h3 {
+        color: $color-dark-green;
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</div>
