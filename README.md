@@ -1,4 +1,4 @@
-Fork del Proyecto de [Carlos](https://github.com/CarlosRayon?tab=repositories)
+Fork del Proyecto de [Carlos](https://github.com/CarlosRayon/web-boda)
 
 # 💍 informative website for a wedding
 
