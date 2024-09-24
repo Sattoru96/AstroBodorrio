@@ -29,8 +29,8 @@ const { tips, description, link = '' } = Astro.props;
   @import "../../styles/variables/_color.scss";
 
   .list-icon__icon {
-    background-color: $color-bg-beige;
-    border: 2px solid $color-gold;
+    background-color: $color-bg-primary;
+    border: 2px solid $color-highlight-dark;
   }
 
   .list-icon__text {
@@ -39,14 +39,14 @@ const { tips, description, link = '' } = Astro.props;
   }
 
   .list-icon__list {
-    background-color: $color-bg-beige;
-    border: 2px solid $color-gold;
+    background-color: $color-bg-primary;
+    border: 2px solid $color-highlight-dark;
     width: 100% !important;
     transition: 0.5s ease;
     // cursor: pointer;
 
     &:hover {
-      border-color: $color-dark-green;
+      border-color: $color-accent-dark;
     }
   }
 </style>

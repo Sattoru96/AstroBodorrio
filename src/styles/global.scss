@@ -9,7 +9,7 @@
 
 body {
     min-height: 100vh;
-    background-color: $color-bg-beige;
+    background-color: $color-bg-primary;
 
 }
 
@@ -18,7 +18,7 @@ p {
 }
 
 .space-section {
-    background-color: $color-light-yellow;
+    background-color: $color-highlight-light;
     height: 1px;
     padding: 2px 0;
 }
@@ -30,14 +30,14 @@ p {
 .circle-icon {
     width: 200px;
     height: 200px;
-    background-color: $color-light-beige;
+    background-color: $color-bg-secondary;
     border-radius: 50%;
-    border: 1px solid $color-gold;
+    border: 1px solid $color-highlight-dark;
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $color-gold;
+    color: $color-highlight-dark;
     padding: 30px;
     box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 30%);
 
@@ -65,7 +65,7 @@ p {
     width: 200px;
     padding: 10px 20px;
     color: white;
-    background-color: $color-dark-green;
+    background-color: $color-accent-dark;
     text-decoration: none;
     border-radius: 5px;
     transition: 0.5s ease;
@@ -80,9 +80,9 @@ p {
 }
 
 .button-link:hover {
-    background-color: $color-bg-beige;
-    color: $color-dark-green;
-    border: 1px solid $color-gold;
+    background-color: $color-bg-primary;
+    color: $color-accent-dark;
+    border: 1px solid $color-highlight-dark;
 }
 
 .modal-open {
@@ -92,6 +92,6 @@ p {
 .title-block {
     font-weight: bold;
     font-size: 2rem;
-    color: $color-dark-green;
+    color: $color-accent-dark;
     text-align: center;
 }

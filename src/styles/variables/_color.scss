@@ -1,24 +1,35 @@
 :root {
-    --color-bg-beige: #f5f4ee;
-    --color-light-beige: #e1decc;
-    --color-light-brown: #c7aca4;
-    --color-light-green: #abad7d;
-    --color-medium-green: #73824c;
-    --color-dark-green: #506326;
-    --color-light-yellow: #fae489;
-    --color-gold: #c79930;
-    --color-medium-brown: #8f6a44;
-    --color-dark-brown: #423e1b;
-    --color-dark-red: #893e3e;
+    --color-bg-primary: #f5f4ee; /* Fondo principal */
+    --color-bg-secondary: #e1decc; /* Fondo secundario */
+    --color-accent-light: #c7aca4; /* Acento claro */
+    --color-accent-medium: #7dada3; /* Acento medio */
+    --color-accent-dark: #264d63; /* Acento oscuro */
+    --color-highlight-light: #fae489; /* Resaltado claro */
+    --color-highlight-dark: #c79930; /* Resaltado oscuro */
+    --color-text-primary: #0e252b; /* Texto principal */
+    --color-text-secondary: #8f6a44; /* Texto secundario */
+    --color-text-alert: #893e3e; /* Alerta/Error */
 }
-$color-bg-beige: #f5f4ee;
-$color-light-beige: #e1decc;
-$color-light-brown: #c7aca4;
-$color-light-green: #abad7d;
-$color-medium-green: #73824c;
-$color-dark-green: #506326;
-$color-light-yellow: #fae489;
-$color-gold: #c79930;
-$color-medium-brown: #8f6a44;
-$color-dark-brown: #423e1b;
-$color-dark-red: #893e3e;
+// $color-bg-primary: #f5f4ee;
+// $color-bg-secondary: #e1decc;
+// $color-accent-light: #c7aca4;
+// $color-accent-medium: #abad7d;
+// //$color-accent-dark: #73824c;
+// $color-accent-dark: #506326;
+// $color-highlight-light: #fae489;
+// $color-highlight-dark: #c79930;
+// $color-text-secondary: #8f6a44;
+// $color-text-primary: #423e1b;
+// $color-text-alert: #893e3e;
+
+
+$color-bg-primary: #f5f4ee; /* Fondo principal */
+$color-bg-secondary: #e1decc; /* Fondo secundario */
+$color-accent-light: #c7aca4; /* Acento claro */
+$color-accent-medium: #7dada3; /* Acento medio */
+$color-accent-dark: #264d63; /* Acento oscuro */
+$color-highlight-light: #fae489; /* Resaltado claro */
+$color-highlight-dark: #c79930; /* Resaltado oscuro */
+$color-text-primary: #0e252b; /* Texto principal */
+$color-text-secondary: #8f6a44; /* Texto secundario */
+$color-text-alert: #893e3e; /* Alerta/Error */
