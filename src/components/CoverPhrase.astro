@@ -1,5 +1,9 @@
 ---
 import Icon from "./parts/Icon.astro";
+
+import CountdownTimer from './parts/CountdownTimer.astro';
+
+const targetDate = "December 9, 2024 23:59:59"; // Fecha objetivo
 ---
 
 <section class="container cover-phrase">
@@ -15,6 +19,10 @@ import Icon from "./parts/Icon.astro";
     <Icon icon="quotes-right" />
   </p>
 </section>
+
+
+<CountdownTimer targetDate={targetDate} />
+
 
 <style lang="scss">
   @import "../styles/variables/_color.scss";
