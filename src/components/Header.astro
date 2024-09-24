@@ -27,25 +27,48 @@
   }
 </style>
 
+<!--
+ https://www.kirilv.com/canvas-confetti/
+-->
 <script>
   import confetti from "canvas-confetti";
 
-  confetti({
-    particleCount: 120,
-    angle: 50,
-    spread: 70,
 
-    origin: { x: 0.1, y: 0.7 },
+var scalar = 6;
+//var icon_church = confetti.shapeFromText({ text: '💒', scalar });
+var icon_novio = confetti.shapeFromText({ text: '🤵🏻', scalar });
+var icon_bride = confetti.shapeFromText({ text: '👰🏽', scalar });
+//var icon_love = confetti.shapeFromText({ text: '💕', scalar });
 
-  });
 
-  confetti({
-    particleCount: 120,
-    angle: 130,
-    spread: 70,
-    gravity: 0.5,
-    origin: { x: 0.9, y: 0.7 },
+var duration = 3 * 1000;
+var animationEnd = Date.now() + duration;
+var defaults = { 
+  particleCount: 10,
+  startVelocity: 30, 
+  spread: 360, 
+  ticks: 60, 
+  zIndex: 0, 
+  shapes: [icon_novio,icon_bride, 'star'],
+  colors: ['#FFE400', '#FFBD00', '#E89400', '#FFCA6C', '#FDFFB8'],
+  scalar: scalar / 2,
+};
 
-  });
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+var interval = setInterval(function() {
+  var timeLeft = animationEnd - Date.now();
+
+  if (timeLeft <= 0) {
+    return clearInterval(interval);
+  }
+  
+  var particleCount = 50 * (timeLeft / duration);
+  // since particles fall down, start a bit higher than random
+  confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+  confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+}, 250);
 
 </script>
