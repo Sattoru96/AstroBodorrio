@@ -18,6 +18,19 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: "Montserrat", serif;
+    src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Dancing_Script", cursive;
+    src: url('/fonts/DancingScript-VariableFont_wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: italic;
+  }
 
 // For title
 @mixin mx-font-gilda {
@@ -34,4 +47,14 @@
     // font-family: 'barlowregular';
     font-family: 'barlowregular';
 
+}
+@mixin mx-font-montserrat {
+    // font-family: 'barlowregular';
+    font-family: "Montserrat", serif;
+
+}
+
+@mixin mx-font-dancing {
+    font-family:"Dancing_Script", cursive;
+    font-style: italic;
 }

@@ -1,10 +1,8 @@
 ---
 import Icon from "./Icon.astro";
 
-const linkBusSanvi = "https://maps.app.goo.gl/TGGSAvEw5kGTo6YXA";
-const linkBusComillas = "https://maps.app.goo.gl/mJnCidgBmtcDXowj7";
-const linkBusCabe = "https://maps.app.goo.gl/3WpvN7QAuhtp1AVK8";
-const linkBusMolinos = "https://maps.app.goo.gl/nWqqT3uJ3QkZeRPB8";
+const linkBusSanvi = "https://maps.app.goo.gl/qqfAKGcQC2keyRE96";
+const linkBusMolinos = "https://maps.app.goo.gl/4wk4cMiGaCjTVRgA7";
 ---
 
 <!-- component -->
@@ -25,53 +23,11 @@ const linkBusMolinos = "https://maps.app.goo.gl/nWqqT3uJ3QkZeRPB8";
     class="order-1 rounded-lg shadow-xl w-5/12 p-2 animate__animated animate__backInRight bus-time__card"
   >
     <a href={linkBusSanvi} target="_blank">
-      <h3 class="bus-time__title">San Vicente de la Barquera</h3>
+      <h3 class="bus-time__title">Llanes</h3>
       <p class="bus-time__text">
-        <strong>Salida:</strong> 11:40
+        <strong>Salida:</strong> Por determinar
         <br />
-        <strong>Lugar:</strong> Estación de autobúses
-      </p>
-    </a>
-  </div>
-</div>
-
-<!-- Comillas -->
-<div class="mb-2 flex justify-start items-center w-full">
-  <div
-    class="z-20 flex items-center order-1 me-3 shadow-xl w-8 h-8 p-1 rounded-full bus-time__icon animate__animated animate__bounceInLeft"
-  >
-    <Icon icon="bus" />
-  </div>
-  <div
-    class="order-1 rounded-lg shadow-xl w-5/12 p-2 animate__animated animate__backInRight bus-time__card"
-  >
-    <a href={linkBusComillas} target="_blank">
-      <h3 class="bus-time__title">Comillas</h3>
-      <p class="bus-time__text">
-        <strong>Salida:</strong> 12:00
-        <br />
-        <strong>Lugar:</strong> Parada de autobús y tren turístico
-      </p>
-    </a>
-  </div>
-</div>
-
-<!-- Cabezon -->
-<div class="mb-2 flex justify-start items-center w-full">
-  <div
-    class="z-20 flex items-center order-1 me-3 shadow-xl w-8 h-8 p-1 rounded-full bus-time__icon animate__animated animate__bounceInLeft"
-  >
-    <Icon icon="bus" />
-  </div>
-  <div
-    class="order-1 rounded-lg shadow-xl w-5/12 p-2 bus-cabe cursor-pointer animate__animated animate__backInRight bus-time__card"
-  >
-    <a href={linkBusCabe} target="_blank">
-      <h3 class="bus-time__title">Cabezón de la Sal</h3>
-      <p class="bus-time__text">
-        <strong>Salida:</strong> 12:20
-        <br />
-        <strong>Lugar:</strong> Parada de autobús enfrente de El Cruce
+        <strong>Lugar:</strong> Playa del Sablón
       </p>
     </a>
   </div>
@@ -88,11 +44,11 @@ const linkBusMolinos = "https://maps.app.goo.gl/nWqqT3uJ3QkZeRPB8";
     class="order-1 rounded-lg shadow-xl w-5/12 p-2 bus-cabe cursor-pointer animate__animated animate__backInRight bus-time__card"
   >
     <a href={linkBusMolinos} target="_blank">
-      <h3 class="bus-time__title">Restaurante Los Molinos de Ruente</h3>
+      <h3 class="bus-time__title">Finca Las Nieves</h3>
       <p class="bus-time__text">
-        <strong>Llegada:</strong> 12:35
+        <strong>Llegada:</strong> Por determinar
         <br />
-        <strong>Lugar:</strong> Restaurante Los Molinos de Ruente
+        <strong>Lugar:</strong> Finca Las Nieves
       </p>
     </a>
   </div>
@@ -100,7 +56,7 @@ const linkBusMolinos = "https://maps.app.goo.gl/nWqqT3uJ3QkZeRPB8";
 
 <div class="mt-6">
   <p class="bus-time__text-return">
-    A las 00:00h saldrá el autobús de vuelta con el itinerario inverso.
+    A las 06:00h saldrá el autobús de vuelta con el itinerario inverso.
   </p>
   <small>Pulsa en cada horario para ver el lugar exacto</small>
 </div>
@@ -122,7 +78,7 @@ const linkBusMolinos = "https://maps.app.goo.gl/nWqqT3uJ3QkZeRPB8";
   }
 
   .bus-time__card {
-    background-color: $color-bg-primary;
+    background-color: #f3edb3;
     border: 2px solid $color-highlight-dark;
     width: 100% !important;
     transition: 0.5s ease;
@@ -134,7 +90,7 @@ const linkBusMolinos = "https://maps.app.goo.gl/nWqqT3uJ3QkZeRPB8";
   }
 
   .bus-time__icon {
-    background-color: $color-bg-primary;
+    background-color: #f3edb3;
     border: 2px solid $color-highlight-dark;
   }
   .bus-time__title {

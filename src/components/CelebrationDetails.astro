@@ -20,14 +20,14 @@ import EventTimes from "./parts/EventTimes.astro";
 
       <div class="celebration__info">
         <h2 class="title-block">Día</h2>
-        <p>Sábado 15 de Junio - 13h</p>
+        <p>Sábado 3 de Mayo - 18h</p>
         <button id="openModalAssistence" class="button-link"
           >Confirmar Asistencia</button
         >
 
         <div class="celebration__info">
           <h2 class="title-block">Lugar</h2>
-          <p>Restaurante Los Molinos de Ruente</p>
+          <p>Basílica de Santa María del Conceyu</p>
           <button id="openModalMap" class="button-link">Cómo llegar</button>
         </div>
 
@@ -48,15 +48,18 @@ import EventTimes from "./parts/EventTimes.astro";
     title="Confirmar Asistencia"
   >
     <div class="flex justify-center items-center flex-col" slot="body">
-      <img src="/assets/images/logo_fecha.png" alt="" style="width: 230px" />
-      <p class="text-center">
-        ¡Ayúdanos a que la boda salga lo mejor posible!
-      </p>
+      <img src="/assets/images/image5.png" alt="" style="width: 320px" />
+      <p class="text-center">¡Ayúdanos a que la boda salga lo mejor posible!</p>
       <p class="text-center">
         Por favor, rellena el siguiente formulario para confirmar tu asistencia.
       </p>
     </div>
-    <a href="https://forms.gle/cTzBCYuQgdwtNC3t7" target="_blank" class="button-link" slot="footer">Completar formulario</a>
+    <a
+      href="https://forms.gle/cTzBCYuQgdwtNC3t7"
+      target="_blank"
+      class="button-link"
+      slot="footer">Completar formulario</a
+    >
   </Modal>
 
   <Modal
@@ -67,7 +70,7 @@ import EventTimes from "./parts/EventTimes.astro";
   >
     <MapIframe slot="body" />
     <a
-      href="https://www.google.com/maps/place/Los+Molinos+de+Ruente,+Barrio+monasterio,+Ruente,+Cantabria,+39513+Ruente,+Cantabria/@43.26067,-4.264895,17z/data=!4m6!3m5!1s0xd490f9abb75d487:0xdb9c06f0841bc448!8m2!3d43.26067!4d-4.264895!16s%2Fg%2F11cn9v1_8p"
+      href="https://www.google.com/maps/place/Bas%C3%ADlica+de+Santa+Mar%C3%ADa+del+Concejo/@43.4214881,-4.7566724,16z/data=!3m2!4b1!5s0xd49eae1809e9267:0x9a8cfd333de99bc!4m6!3m5!1s0xd49eae22ca7e59b:0xa72d62a6c6ad52b8!8m2!3d43.4214881!4d-4.7540975!16s%2Fm%2F0c40x02?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoASAFQAw%3D%3D"
       target="blank"
       class="button-link"
       slot="footer">Ampliar Mapa</a
@@ -81,7 +84,7 @@ import EventTimes from "./parts/EventTimes.astro";
     title="Horarios de autobús"
   >
     <div class="flex justify-center items-center flex-col" slot="body">
-      <p class="mb-6">Haz click para ver el lugar exacto en el mapa </p>
+      <p class="mb-6">Haz click para ver el lugar exacto en el mapa</p>
       <EventTimes />
     </div>
   </Modal>

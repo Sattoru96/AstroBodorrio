@@ -4,7 +4,7 @@ interface Props {
   description: string;
   link: string;
 }
-const { tips, description, link = '' } = Astro.props;
+const { tips, description, link = "" } = Astro.props;
 ---
 
 <div class="mb-2 flex justify-start items-center w-full">
@@ -29,7 +29,7 @@ const { tips, description, link = '' } = Astro.props;
   @import "../../styles/variables/_color.scss";
 
   .list-icon__icon {
-    background-color: $color-bg-primary;
+    background-color: #f3edb3;
     border: 2px solid $color-highlight-dark;
   }
 
@@ -39,7 +39,7 @@ const { tips, description, link = '' } = Astro.props;
   }
 
   .list-icon__list {
-    background-color: $color-bg-primary;
+    background-color: #f3edb3;
     border: 2px solid $color-highlight-dark;
     width: 100% !important;
     transition: 0.5s ease;

@@ -5,92 +5,102 @@ const countdownDate = new Date(targetDate); // Asegúrate de que esto esté corr
 
 <div class="countdown">
   <div class="time">
-    <h2 id="years">00</h2>
-    <small>AÑOS</small>
-  </div>
-  <div class="time">
     <h2 id="days">00</h2>
     <small>DÍAS</small>
+  </div>
+  <div>
+    <h2></h2>
   </div>
   <div class="time">
     <h2 id="hours">00</h2>
     <small>HORAS</small>
   </div>
+  <div>
+    <h2>:</h2>
+  </div>
   <div class="time">
     <h2 id="minutes">00</h2>
     <small>MINUTOS</small>
+  </div>
+  <div>
+    <h2>:</h2>
   </div>
   <div class="time">
     <h2 id="seconds">00</h2>
     <small>SEGUNDOS</small>
   </div>
+
+  <style>
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2 {
+      font-size: 6rem;
+      margin: 0;
+      font-family: "Fantasy";
+      color: #8d93c5;
+    }
+    small {
+      font-size: 1rem;
+      color: #000000;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const targetDate = new Date("May 6, 2025 18:00:00"); // Asegúrate de que esta línea sea correcta
+      const yearsElem = document.getElementById("years");
+      const daysElem = document.getElementById("days");
+      const hoursElem = document.getElementById("hours");
+      const minutesElem = document.getElementById("minutes");
+      const secondsElem = document.getElementById("seconds");
+
+      const updateCountdown = () => {
+        const now = new Date();
+        const diff = targetDate.getTime() - now.getTime(); // Usa targetDate aquí
+
+        // Debug logs
+        console.log("Current Date:", now);
+        console.log("Target Date:", targetDate);
+        console.log("Difference (ms):", diff);
+
+        if (diff < 0) {
+          clearInterval(countdownInterval);
+          console.log("Countdown has ended.");
+          yearsElem.innerText = "00";
+          daysElem.innerText = "00";
+          hoursElem.innerText = "00";
+          minutesElem.innerText = "00";
+          secondsElem.innerText = "00";
+          return; // Si ya pasó la fecha, no hacemos nada más
+        }
+
+        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+        const days = Math.floor(
+          (diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)
+        );
+        const hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Update countdown elements
+        daysElem.innerText = days < 10 ? "0" + days : days;
+        hoursElem.innerText = hours < 10 ? "0" + hours : hours;
+        minutesElem.innerText = minutes < 10 ? "0" + minutes : minutes;
+        secondsElem.innerText = seconds < 10 ? "0" + seconds : seconds;
+      };
+
+      const countdownInterval = setInterval(updateCountdown, 1000);
+      updateCountdown(); // Llamar a la función inmediatamente para evitar el retraso inicial
+    });
+  </script>
 </div>
-
-<style>
-  .countdown {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  .time {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  h2 {
-    font-size: 3rem;
-    margin: 0;
-  }
-  small {
-    font-size: 1rem;
-    color: #666;
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const targetDate = new Date("December 9, 2024 23:59:59"); // Asegúrate de que esta línea sea correcta
-    const yearsElem = document.getElementById('years');
-    const daysElem = document.getElementById('days');
-    const hoursElem = document.getElementById('hours');
-    const minutesElem = document.getElementById('minutes');
-    const secondsElem = document.getElementById('seconds');
-
-    const updateCountdown = () => {
-      const now = new Date();
-      const diff = targetDate.getTime() - now.getTime(); // Usa targetDate aquí
-
-      // Debug logs
-      console.log("Current Date:", now);
-      console.log("Target Date:", targetDate);
-      console.log("Difference (ms):", diff);
-
-      if (diff < 0) {
-        clearInterval(countdownInterval);
-        console.log("Countdown has ended.");
-        yearsElem.innerText = '00';
-        daysElem.innerText = '00';
-        hoursElem.innerText = '00';
-        minutesElem.innerText = '00';
-        secondsElem.innerText = '00';
-        return; // Si ya pasó la fecha, no hacemos nada más
-      }
-
-      const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-      const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      // Update countdown elements
-      yearsElem.innerText = years < 10 ? '0' + years : years;
-      daysElem.innerText = days < 10 ? '0' + days : days;
-      hoursElem.innerText = hours < 10 ? '0' + hours : hours;
-      minutesElem.innerText = minutes < 10 ? '0' + minutes : minutes;
-      secondsElem.innerText = seconds < 10 ? '0' + seconds : seconds;
-    };
-
-    const countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Llamar a la función inmediatamente para evitar el retraso inicial
-  });
-</script>

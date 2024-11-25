@@ -4,7 +4,7 @@
 @import "animations.scss";
 
 * {
-    @include mx-font-barlow;
+    @include mx-font-montserrat;
 }
 
 body {
@@ -24,7 +24,11 @@ p {
 }
 
 .font-start-midnight {
-    @include mx-font-start-midnight;
+    @include mx-font-dancing;
+}
+
+.font-montserrat{
+    @include  mx-font-montserrat;
 }
 
 .circle-icon {
@@ -53,7 +57,8 @@ p {
 }
 
 .wrapper-background {
-    background-image: url("/assets/images/fondo.jpg");
+    background-image: url("/assets/images/white-rice.jpg");
+    /*background-color: #e7ceb6;*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

@@ -1,22 +1,74 @@
+---
+import Icon from "./parts/Icon.astro";
+---
+
 <header class="header">
-  <img
-    class="header__image animate__animated animate__fadeIn animate__slower"
-    src="/assets/images/logo_fecha.png"
-    alt="Boda de Inés y Carlos"
-  />
+  <div class="titulo">
+    <p class="titulo-texto font-montserrat">Isa & Rubén<br /></p>
+    <p class="titulo-fecha">03-05-2025</p>
+  </div>
+  <section class="container cover-phrase">
+    <p class="cover-phrase__quote">
+      <Icon icon="quotes-left" />
+    </p>
+
+    <p class="cover-phrase__phrase font-start-midnight">
+      Prometo quererte tanto como el Real Madrid a una final de Champions
+    </p>
+
+    <p class="cover-phrase__quote">
+      <Icon icon="quotes-right" />
+    </p>
+  </section>
 </header>
 
-<style>
+<style lang="scss">
+  @import "../styles/variables/_color.scss";
+  .titulo {
+    text-align: center;
+    padding-top: 30px;
+
+    .titulo-texto {
+      font-size: 4rem;
+    }
+    .titulo-fecha {
+      font-size: 3rem;
+    }
+  }
   .header {
     display: flex;
-    justify-content: center;
+    justify-content: top;
+    flex-direction: column;
     align-items: center;
-    background-image: url("/assets/images/fondo.jpg");
+    height: 800px;
+    background-color: white;
+    background-image: url("/assets/images/imgfondoblanco.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: auto;
+    background-position: center top;
   }
+  .cover-phrase {
+    padding: 50px 0;
 
+    .cover-phrase__quote {
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      color: $color-highlight-dark;
+    }
+    .cover-phrase__phrase {
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 500;
+      line-height: 65px;
+      color: $color-accent-dark;
+      padding: 20px 20px;
+      @media (max-width: 768px) {
+        font-size: 4rem;
+      }
+    }
+  }
   .header__image {
     max-width: 100%;
     height: auto;
@@ -33,42 +85,47 @@
 <script>
   import confetti from "canvas-confetti";
 
+  var scalar = 6;
+  //var icon_church = confetti.shapeFromText({ text: '💒', scalar });
+  var icon_novio = confetti.shapeFromText({ text: "🤵🏻", scalar });
+  var icon_bride = confetti.shapeFromText({ text: "👰🏽", scalar });
+  //var icon_love = confetti.shapeFromText({ text: '💕', scalar });
 
-var scalar = 6;
-//var icon_church = confetti.shapeFromText({ text: '💒', scalar });
-var icon_novio = confetti.shapeFromText({ text: '🤵🏻', scalar });
-var icon_bride = confetti.shapeFromText({ text: '👰🏽', scalar });
-//var icon_love = confetti.shapeFromText({ text: '💕', scalar });
+  var duration = 3 * 1000;
+  var animationEnd = Date.now() + duration;
+  var defaults = {
+    particleCount: 10,
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 0,
+    shapes: [icon_novio, icon_bride, "star"],
+    colors: ["#FFE400", "#FFBD00", "#E89400", "#FFCA6C", "#FDFFB8"],
+    scalar: scalar / 2,
+  };
 
-
-var duration = 3 * 1000;
-var animationEnd = Date.now() + duration;
-var defaults = { 
-  particleCount: 10,
-  startVelocity: 30, 
-  spread: 360, 
-  ticks: 60, 
-  zIndex: 0, 
-  shapes: [icon_novio,icon_bride, 'star'],
-  colors: ['#FFE400', '#FFBD00', '#E89400', '#FFCA6C', '#FDFFB8'],
-  scalar: scalar / 2,
-};
-
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-var interval = setInterval(function() {
-  var timeLeft = animationEnd - Date.now();
-
-  if (timeLeft <= 0) {
-    return clearInterval(interval);
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
   }
-  
-  var particleCount = 50 * (timeLeft / duration);
-  // since particles fall down, start a bit higher than random
-  confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-  confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-}, 250);
 
+  var interval = setInterval(function () {
+    var timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    var particleCount = 50 * (timeLeft / duration);
+    // since particles fall down, start a bit higher than random
+    confetti({
+      ...defaults,
+      particleCount,
+      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+    });
+    confetti({
+      ...defaults,
+      particleCount,
+      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+    });
+  }, 250);
 </script>
