@@ -3,6 +3,7 @@
 @import "scrollbar.scss";
 @import "animations.scss";
 
+
 * {
     @include mx-font-montserrat;
 }
@@ -28,7 +29,7 @@ p {
 }
 
 .font-montserrat{
-    @include  mx-font-montserrat;
+    @include mx-font-montserrat;
 }
 
 .circle-icon {
