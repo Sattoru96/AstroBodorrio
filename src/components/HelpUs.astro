@@ -1,0 +1,92 @@
+---
+import Icon from "./parts/Icon.astro";
+import Modal from "./parts/Modal.astro";
+import ClipBoard from "./parts/ClipBoard.astro";
+import Slider from "./parts/Slider.astro";
+---
+
+<section class="helpus container grid grid-cols-1 gap7 place-items-center">
+  <div
+    class="helpus__block helpus__block--playlist flex justify-center items-center flex-col shadow-lg"
+  >
+    <h2 class="title-block my-6">Regalos</h2>
+
+    <div class="circle-icon helpus__circle-icon">
+      <span
+        class="icon-container icon-plane invisible animate__animated animate__slow"
+      >
+        <Icon icon="plane" />
+      </span>
+    </div>
+
+    <div class="helpus__text">
+      <p>Nos gustaría ir de viaje de novios lejos, muy lejos...</p>
+      <p>¿Nos ayudas a conseguirlo?</p>
+    </div>
+
+    <button id="openModalHelpUs" class="button-link helpus__button"
+      >Ayúdanos</button
+    >
+  </div>
+</section>
+
+<Modal
+  id="modalHelpUs"
+  open="openModalHelpUs"
+  close="closeModalHelpUs"
+  title="Ayúdanos a llegar lejos"
+>
+  <div class="flex justify-center items-center flex-col" slot="body">
+    <p class="text-center mb-4">Nos gustaría ir de Luna de Miel a Indonesia</p>
+    <p class="text-center mb-4">¡Ayudanos a hacerlo realidad!</p>
+
+    <Slider />
+
+    <ClipBoard
+      id="ibanInes"
+      text="ES07 0081 2707 6000 0468 4273"
+      name="Transferencias"
+    />
+    <div style="height: 50px;"></div>
+    <p class="text-center mb-4">
+      También podeis hacernos bizum a cualquiera de los dos
+    </p>
+  </div>
+</Modal>
+
+<script>
+  import { observerAnimation } from "../scripts/observerAnimation";
+  observerAnimation(".icon-plane", "animate__fadeInBottomLeft");
+</script>
+
+<style lang="scss">
+  @import "../styles/variables/_color.scss";
+  .helpus {
+    padding: 60px 20px;
+  }
+  .helpus__block {
+    max-width: 80;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 25px;
+    background-color: $color-bg-secondary;
+    color: $color-accent-dark;
+  }
+
+  .helpus__text {
+    text-align: center;
+    margin-bottom: 2rem;
+    height: 60px;
+    padding: 5px;
+  }
+
+  .helpus__button {
+    margin-bottom: 2rem;
+  }
+
+  .helpus__circle-icon {
+    width: 160px;
+    height: 160px;
+    padding: 30px;
+  }
+</style>

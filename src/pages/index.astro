@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Party from "../components/Party.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CoverPhrase from "../components/CoverPhrase.astro";
+import CelebrationDetails from "../components/CelebrationDetails.astro";
+
+import HelpUs from "../components/HelpUs.astro";
+import Instagram from "../components/Instagram.astro";
+---
+
+<Layout title="Isa y Rubén se casan">
+  <main class="pagina container-lg h-screen">
+    <div class="tronco">
+      <Header />
+      <div class="space-section"></div>
+      <CoverPhrase />
+      <div class="space-section"></div>
+      <CelebrationDetails />
+      <div class="space-section"></div>
+      <Party />
+      <div class="space-section"></div>
+      <Instagram />
+      <div class="space-section"></div>
+      <HelpUs />
+      <div class="space-section"></div>
+      <Footer autor="#isayrubensecasan" />
+    </div>
+  </main>
+</Layout>
+<style>
+  .pagina {
+    display: flex;
+  }
+  .tronco {
+    max-width: 800px;
+    margin: auto;
+    background-color: #f3edb3;
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import "../styles/global.scss";
+import "animate.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Boda de Ines y carlos - 15 junio 2024" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="scrollbar-style">
+    <slot />
+  </body>
+</html>
+

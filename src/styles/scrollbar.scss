@@ -1,0 +1,22 @@
+/* https://www.digitalocean.com/community/tutorials/css-scrollbars */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $color-highlight-dark $color-bg-secondary;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: $color-bg-secondary;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $color-accent-dark;
+    border-radius: 20px;
+    border: 3px solid $color-bg-secondary;
+}

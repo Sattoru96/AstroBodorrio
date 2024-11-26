@@ -1,0 +1,50 @@
+<section class="playlist">
+  <div class="playlist__text">
+    <p>Añade la cancion que no puede faltar en nuestra boda</p>
+  </div>
+
+  <div class="playlist__iframe iframe-responsive">
+    <iframe
+      src="https://www.youtube.com/embed/XH9jnG1Ylwc"
+      width="500"
+      height="350"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+
+  <div class="playlist__help">
+    <small class="playlist__small"
+      >* Tienes que tener una cuenta de Spotify y estar logueado</small
+    >
+  </div>
+</section>
+
+<style>
+  .playlist__iframe {
+    margin: 20px 0;
+  }
+
+  .playlist__small {
+    display: block;
+    padding-top: 15px;
+  }
+  .iframe-responsive {
+    padding: 5px;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+
+  .iframe-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+</style>

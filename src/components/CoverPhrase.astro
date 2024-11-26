@@ -1,0 +1,40 @@
+---
+import Icon from "./parts/Icon.astro";
+
+import CountdownTimer from "./parts/CountdownTimer.astro";
+
+const targetDate = "May 3, 2025 21:59:59"; // Fecha objetivo
+---
+
+<section class="container cover-phrase">
+  <h3 class="cover-phrase__phrase">Quedan</h3>
+</section>
+<section class="countdown"><CountdownTimer targetDate={targetDate} /></section>
+
+<style lang="scss">
+  @import "../styles/variables/_color.scss";
+  .countdown {
+    padding-bottom: 50px;
+  }
+  .cover-phrase {
+    padding: 30px 0;
+
+    .cover-phrase__quote {
+      display: flex;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: $color-highlight-dark;
+    }
+    .cover-phrase__phrase {
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 500;
+      line-height: 65px;
+      color: $color-accent-dark;
+      padding: 20px 20px;
+      @media (max-width: 768px) {
+        font-size: 4rem;
+      }
+    }
+  }
+</style>
