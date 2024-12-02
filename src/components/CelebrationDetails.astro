@@ -2,6 +2,7 @@
 import Icon from "./parts/Icon.astro";
 import Modal from "./parts/Modal.astro";
 import MapIframe from "./parts/MapIframe.astro";
+import MapIframe2 from "./parts/MapIframe2.astro";
 import EventTimes from "./parts/EventTimes.astro";
 ---
 
@@ -29,6 +30,8 @@ import EventTimes from "./parts/EventTimes.astro";
           <h2 class="title-block">Lugar</h2>
           <p>Basílica de Santa María del Conceyu</p>
           <button id="openModalMap" class="button-link">Cómo llegar</button>
+          <p>Finca Las Nieves</p>
+          <button id="openModalMap2" class="button-link">Cómo llegar</button>
         </div>
 
         <div class="celebration__info">
@@ -55,7 +58,7 @@ import EventTimes from "./parts/EventTimes.astro";
       </p>
     </div>
     <a
-      href="https://forms.gle/cTzBCYuQgdwtNC3t7"
+      href="https://forms.gle/c1U2kp4tDnYi2GocA"
       target="_blank"
       class="button-link"
       slot="footer">Completar formulario</a
@@ -71,6 +74,20 @@ import EventTimes from "./parts/EventTimes.astro";
     <MapIframe slot="body" />
     <a
       href="https://www.google.com/maps/place/Bas%C3%ADlica+de+Santa+Mar%C3%ADa+del+Concejo/@43.4214881,-4.7566724,16z/data=!3m2!4b1!5s0xd49eae1809e9267:0x9a8cfd333de99bc!4m6!3m5!1s0xd49eae22ca7e59b:0xa72d62a6c6ad52b8!8m2!3d43.4214881!4d-4.7540975!16s%2Fm%2F0c40x02?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoASAFQAw%3D%3D"
+      target="blank"
+      class="button-link"
+      slot="footer">Ampliar Mapa</a
+    >
+  </Modal>
+  <Modal
+    id="modalMap2"
+    open="openModalMap2"
+    close="closeModalMap2"
+    title="¿Cómo llegar a la finca?"
+  >
+    <MapIframe2 slot="body" />
+    <a
+      href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11592.047494749473!2d-4.788260974825505!3d43.418578639747906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd49ea52302de4c1%3A0x9a0ee146c2dcdf37!2sFinca%20Las%20Nieves!5e0!3m2!1ses!2ses!4v1733069144176!5m2!1ses!2ses"
       target="blank"
       class="button-link"
       slot="footer">Ampliar Mapa</a
@@ -129,6 +146,7 @@ import EventTimes from "./parts/EventTimes.astro";
       }
 
       p {
+        padding-top: 30px;
         font-size: 1.5rem;
       }
     }
